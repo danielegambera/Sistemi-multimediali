@@ -21,7 +21,7 @@ public class IDCT1D implements Transform {
 			for (int u = 0; u < n; u++) 
 			{
 				ak = Utiliy.ak(u, n);
-				accumulatore += ak*source[u]*Math.cos(((2*u+1)*x*Math.PI)/(2*n));
+				accumulatore += ak*source[u]*Math.cos(((2*x+1)*u*Math.PI)/(2*n));
 			}
 			result[x] = accumulatore;
 		}

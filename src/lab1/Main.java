@@ -2,16 +2,16 @@ package lab1;
 
 public class Main {
 	public static void main(String args[]) {
-		Transform myDCT = new DCT1D();
-		double[] src = new double[10];
+		Transform myDCT1D = new DCT1D();//una dimensione
+		double[] src = new double[3];
 		for (int i = 0; i < src.length; i++) {
 			src[i] = (int)(42*Math.random());
 			System.out.println(src[i]);
 		}
 		System.out.println("\n");
-		myDCT.setSourceData(src);
-		myDCT.calculate();
-		double[] transformedData1D = (double[])myDCT.getResult();
+		myDCT1D.setSourceData(src);
+		myDCT1D.calculate();
+		double[] transformedData1D = (double[])myDCT1D.getResult();
 		for (double d : transformedData1D) {
 			System.out.println(d);
 		}
@@ -21,7 +21,7 @@ public class Main {
 		Transform myIDCT = new IDCT1D();
 		myIDCT.setSourceData(transformedData1D);
 		myIDCT.calculate();
-		double[] transformedData1DI = (double[])myDCT.getResult();
+		double[] transformedData1DI = (double[])myIDCT.getResult();
 		for (double d : transformedData1DI) {
 			System.out.println(d);
 		}

@@ -15,5 +15,13 @@ public class Utiliy {
 		}
 		return ak;
 	}
+	
+	public static double checkBound(double a) {
+		if(a<0) return 0;
+		if (a>255) { return 255;
+			
+		}
+		return a;
+	}
 
 }
