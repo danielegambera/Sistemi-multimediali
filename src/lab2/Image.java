@@ -13,7 +13,7 @@ public class Image {
 			double [][] DCTmatrix = new double[8][8];
 				for (int i = 0; i < 8; i++) {
 					for (int j = 0; j < 8; j++) {
-						DCTmatrix[i][j] = originalImage.getRaster().getSample(startx, starty, channel)-128;
+						DCTmatrix[i][j] = originalImage.getRaster().getSample(startx+i, starty+j, channel)-128;
 					}
 				}
 				return DCTmatrix;
