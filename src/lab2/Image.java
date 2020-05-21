@@ -60,8 +60,7 @@ public class Image {
 			for (int i = 0; i < 8; i++) {
 				for (int j = 0; j < 8; j++) {
 					outmatrix[i][j] +=128;
-					Utiliy.checkBound(outmatrix[i][j]);
-					immagine.getRaster().setSample(startx+i, starty+j, banda, outmatrix[i][j]);
+					immagine.getRaster().setSample(startx+i, starty+j, banda, Utiliy.checkBound(outmatrix[i][j]));
 				}
 			}
 		}

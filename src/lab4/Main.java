@@ -1,4 +1,4 @@
-package lab3;
+package lab4;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -8,10 +8,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import lab1.Transform;
-
 public class Main {
-
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		BufferedImage originalImage = null, processedImage = null;
@@ -22,11 +20,11 @@ public class Main {
 			e.printStackTrace();
 		}
 		
-		Transform myConvolution= new Convolution();
-		((Convolution) myConvolution).setKernel(RasterFilters.getSharpen(8));
-		myConvolution.setSourceData(originalImage);
-		myConvolution.calculate();
-		processedImage= (BufferedImage) myConvolution.getResult();
+		Bicubic myResampling= new Bicubic();
+		myResampling.setRatio(1.5);
+		myResampling.setSourceData(originalImage);
+		myResampling.calculate();
+		processedImage = (BufferedImage) myResampling.getResult();
 		
 		JLabel label = new JLabel(new ImageIcon(originalImage));
 		JFrame f = new JFrame("Originalpicture");
@@ -42,4 +40,5 @@ public class Main {
 		f2.setVisible(true);
 	}
 
+	
 }

@@ -36,7 +36,7 @@ public class Convolution implements Transform {
 								somma += source.getRaster().getSample(x+k, y+l,banda)* kernel[k+N/2][l+N/2];
 							}
 						}
-						result.getRaster().setSample(x, y, banda, Utiliy.checkBound(somma));
+						result.getRaster().setSample(x, y, banda, Utiliy.checkBound(somma)); //scrive il nuovo pixel
 				}
 				else {
 					result.getRaster().setSample(x, y, banda, source.getRaster().getSample(x, y, banda));

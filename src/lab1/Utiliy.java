@@ -23,5 +23,22 @@ public class Utiliy {
 		}
 		return a;
 	}
+	
+	public static double bicubicInterpolation(int k, double h) {
+		double phi = 0;
+		if (k == -1) {
+			phi = (-(h*h*h) + (3*h*h) - (2*h))/6;
+		}
+		if (k == 0) {
+			phi = ((h*h*h) - (2*h*h) - h +2)/2;
+		}
+		if (k == 1) {
+			phi = (-(h*h*h) + (h*h) + (2*h))/2;
+		}
+		if (k == 2) {
+			phi = ((h*h*h) - h)/6;
+		}
+		return phi;
+	}
 
 }
